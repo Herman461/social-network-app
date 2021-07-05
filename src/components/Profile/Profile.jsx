@@ -4,10 +4,11 @@ import smile from '../../assets/img/icons/smile.svg';
 import camera from '../../assets/img/icons/camera.png';
 import music from '../../assets/img/icons/music.png';
 import micro from '../../assets/img/icons/micro.png';
-import ProfileInfo from '../ProfileComponents/ProfileInfo';
-import Posts from '../ProfileComponents/Posts';
 
-const Profile = () => {
+import ProfileInfo from './ProfileInfo';
+import Posts from './Posts';
+
+const Profile = (props) => {
    return (
       <div className="profile">
          <ProfileInfo />
@@ -33,7 +34,7 @@ const Profile = () => {
                </ul>
             </div>
          </form>
-         <Posts />
+         <Posts posts={props.posts} />
       </div>
    );
 };

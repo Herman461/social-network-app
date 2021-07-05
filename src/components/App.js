@@ -1,15 +1,15 @@
 import React from 'react';
 
 import Header from './Header';
-import Profile from './pages/Profile';
+import Profile from './Profile/Profile';
 import { Route } from 'react-router-dom';
 import Friends from './pages/Friends';
 import Sidebar from './Sidebar';
-import Dialogs from './pages/Dialogs';
+import Dialogs from './Dialogs/Dialogs';
 import Music from './pages/Music';
 import Gallery from './pages/Gallery';
 
-const App = () => {
+const App = (props) => {
    return (
       <div className="wrapper">
          <Header />
@@ -17,8 +17,8 @@ const App = () => {
             <div className="page__container _container">
                <Sidebar />
                <div className="page__content content-page">
-                  <Route component={Profile} path="/profile" />
-                  <Route component={Dialogs} path="/dialogs" />
+                  <Route render={() => <Profile posts={props.posts} />} path="/profile" />
+                  <Route render={() => <Dialogs dialogs={props.dialogs} messages={props.messages} />} path="/dialogs" />
                   <Route component={Friends} path="/friends" />
                   <Route component={Music} path="/music" />
                   <Route component={Gallery} path="/gallery" />

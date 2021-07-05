@@ -319,7 +319,7 @@ a {
 }
 
 .new-post {
-   margin: 0px 0px 20px 0px;
+   margin: 0px 0px 65px 0px;
 }
 
 .new-post__body {
@@ -433,4 +433,12 @@ a {
 
 .posts-profile__item:last-child {
    margin: 0px 0px 0px 0px;
+}
+
+.new-post__button {
+   color: #fff;
+   padding: 0px 20px;
+   min-height: 40px;
+   border: 1px solid #403d3d;
+   background-color: #1b1a1a;
 }

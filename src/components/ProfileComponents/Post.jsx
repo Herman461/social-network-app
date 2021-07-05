@@ -8,7 +8,7 @@ const Post = (props) => {
             <img src={smallAva} alt="" />
          </div>
          <div className="item-posts__body">
-            <div className="item-posts__text">{props.text}</div>
+            <div className="item-posts__text">{props.message}</div>
             <div className="item-posts__likes-count">{`likes: ${props.likesCount}`}</div>
          </div>
       </li>

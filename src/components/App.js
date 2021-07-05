@@ -1,12 +1,13 @@
 import React from 'react';
+
 import Header from './Header';
-import Profile from './Profile';
+import Profile from './pages/Profile';
 import { Route } from 'react-router-dom';
-import Friends from './Friends';
+import Friends from './pages/Friends';
 import Sidebar from './Sidebar';
-import Dialogs from './Dialogs';
-import Music from './Music';
-import Gallery from './Gallery';
+import Dialogs from './pages/Dialogs';
+import Music from './pages/Music';
+import Gallery from './pages/Gallery';
 
 const App = () => {
    return (

@@ -4,7 +4,7 @@ import Profile from './Profile';
 import { Route } from 'react-router-dom';
 import Friends from './Friends';
 import Sidebar from './Sidebar';
-import Messages from './Messages';
+import Dialogs from './Dialogs';
 import Music from './Music';
 import Gallery from './Gallery';
 
@@ -17,7 +17,7 @@ const App = () => {
                <Sidebar />
                <div className="page__content content-page">
                   <Route component={Profile} path="/profile" />
-                  <Route component={Messages} path="/messages" />
+                  <Route component={Dialogs} path="/dialogs" />
                   <Route component={Friends} path="/friends" />
                   <Route component={Music} path="/music" />
                   <Route component={Gallery} path="/gallery" />

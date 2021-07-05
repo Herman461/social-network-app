@@ -259,19 +259,17 @@ a {
 }
 
 .page {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
    background-color: #252525;
-   min-height: 100%;
+   flex: 1 1 auto;
    padding: 20px 0px 0px 0px;
 }
 
 .page__side {
    -webkit-box-flex: 0;
    -ms-flex: 0 0 260px;
-   flex: 0 0 260px;
+   flex: 0 0 260px;  
    background-color: #1b1a1a;
+   align-self: flex-start; /* Внести свойство в реальный проект */
 }
 
 .page__content {
@@ -370,7 +368,38 @@ a {
 .side-page__link._active {
    color: rgb(78, 72, 72);
 }
-
+.side-page__list {
+   padding: 20px;
+}
 .page__container {
    display: flex;
+}
+
+.dialogs {
+   display: flex;
+}
+.dialogs__names li {
+   margin: 0px 0px 10px 0px;
+}
+.dialogs__name {
+   font-size: 16px;
+   color: #fff;
+}
+.dialogs__name._active {
+   color: #fc6000;
+}
+.dialogs__messages {
+   flex: 1 1 auto;
+   padding: 0px 0px 0px 33px;
+}
+
+.dialogs__message {
+   font-size: 16px;
+   margin: 0px 0px 12px 0px;
+}
+
+#root {
+   min-height: 100%;
+   width: 100%;
+   background-color: #252525;
 }

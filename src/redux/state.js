@@ -6,6 +6,7 @@ let state = {
          { likesCount: 34, message: 'Хорошая веб-страница! Мне очень нравится', id: 3 },
          { likesCount: 120, message: 'Изучению программирование каждый день.', id: 4 },
       ],
+      newPostText: '',
    },
    dialogsPage: {
       dialogs: [
@@ -20,7 +21,35 @@ let state = {
          { id: 2, text: 'Изучаю Реакт и Редакс!' },
          { id: 3, text: 'Мне нравится изучать JS!!!' },
       ],
+      newMessageText: '',
    },
 };
+window.state = state;
+
+export const updateNewPostText = (newText) => {
+   state.profilePage.newPostText = newText;
+   rerenderEntireTree();
+};
+
+export const addPost = () => {
+   let newPost = { likesCount: 0, message: state.profilePage.newPostText, id: 5 };
+   state.profilePage.posts.push(newPost);
+   state.profilePage.newPostText = '';
+   rerenderEntireTree();
+};
+
+export const updateNewMessageText = (newText) => {
+   state.dialogsPage.newMessageText = newText;
+   rerenderEntireTree();
+};
+export const addMessage = () => {
+   let newMessage = { id: 4, text: state.dialogsPage.newMessageText };
+   state.dialogsPage.messages.push(newMessage);
+   state.dialogsPage.newMessageText = '';
+   rerenderEntireTree();
+};
+
+let rerenderEntireTree;
+export const subscribe = (observer) => (rerenderEntireTree = observer);
 
 export default state;

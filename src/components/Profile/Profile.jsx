@@ -9,6 +9,14 @@ import ProfileInfo from './ProfileInfo';
 import Posts from './Posts';
 
 const Profile = (props) => {
+   function onPostChange(e) {
+      let text = e.target.value;
+      props.updateNewPostText(text);
+   }
+   function addPost(e) {
+      e.preventDefault();
+      props.addPost();
+   }
    return (
       <div className="profile">
          <ProfileInfo />
@@ -16,8 +24,12 @@ const Profile = (props) => {
             <div className="new-post__body">
                <textarea
                   placeholder="Создать новый пост..."
-                  className="new-post__textarea"></textarea>
-               <button className="new-post__button">Добавить пост</button>
+                  className="new-post__textarea"
+                  value={props.state.newPostText}
+                  onChange={onPostChange}></textarea>
+               <button onClick={addPost} className="new-post__button">
+                  Добавить пост
+               </button>
                <ul className="new-post__actions">
                   <li className="new-post__action">
                      <img src={smile} />

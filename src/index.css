@@ -380,11 +380,34 @@ a {
    display: flex;
 }
 
-.dialogs {
+.dialogs__body {
    display: flex;
+   margin: 0px 0px 25px 0px;
 }
 .dialogs__names li {
    margin: 0px 0px 10px 0px;
+}
+.form-dialogs__textarea {
+   padding: 5px 5px 30px 5px;
+   color: #fff;
+   background-color: #1b1a1a;
+   border: 1px solid #403d3d;
+   width: 300px;
+   height: 80px;
+   margin: 0px 0px 10px 0px;
+}
+.form-dialogs {
+
+}
+.form-dialogs__button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #fff;
+   padding: 0px 20px;
+   min-height: 40px;
+   border: 1px solid #403d3d;
+   background-color: #1b1a1a;
 }
 .dialogs__name {
    font-size: 16px;

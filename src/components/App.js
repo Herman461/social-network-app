@@ -17,8 +17,8 @@ const App = (props) => {
             <div className="page__container _container">
                <Sidebar />
                <div className="page__content content-page">
-                  <Route render={() => <Profile posts={props.posts} />} path="/profile" />
-                  <Route render={() => <Dialogs dialogs={props.dialogs} messages={props.messages} />} path="/dialogs" />
+                  <Route render={() => <Profile state={props.state.profilePage} />} path="/profile" />
+                  <Route render={() => <Dialogs state={props.state.dialogsPage} />} path="/dialogs" />
                   <Route component={Friends} path="/friends" />
                   <Route component={Music} path="/music" />
                   <Route component={Gallery} path="/gallery" />

@@ -34,7 +34,7 @@ const Profile = (props) => {
                </ul>
             </div>
          </form>
-         <Posts posts={props.posts} />
+         <Posts posts={props.state.posts} />
       </div>
    );
 };

@@ -1,3 +1,5 @@
+import { ADD_POST, UPDATE_NEW_POST_TEXT, SEND_MESSAGE, UPDATE_NEW_MESSAGE_TEXT } from './actions';
+
 let store = {
    _state: {
       profilePage: {
@@ -28,29 +30,34 @@ let store = {
    getState() {
       return this._state;
    },
-   updateNewPostText(newText) {
-      this._state.profilePage.newPostText = newText;
-      this._callSubscriber();
-   },
-   addPost() {
-      let newPost = { likesCount: 0, message: this._state.profilePage.newPostText, id: 5 };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber();
-   },
-   updateNewMessageText(newText) {
-      this._state.dialogsPage.newMessageText = newText;
-      this._callSubscriber();
-   },
-   addMessage() {
-      let newMessage = { id: 4, text: this._state.dialogsPage.newMessageText };
-      this._state.dialogsPage.messages.push(newMessage);
-      this._state.dialogsPage.newMessageText = '';
-      this._callSubscriber();
-   },
    _callSubscriber() {},
    subscribe(observer) {
       this._callSubscriber = observer;
+   },
+
+   dispatch(action) {
+      switch (action.type) {
+         case ADD_POST:
+            let newPost = { likesCount: 0, message: this._state.profilePage.newPostText, id: 5 };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber();
+            break;
+         case UPDATE_NEW_POST_TEXT:
+            this._state.profilePage.newPostText = action.postText;
+            this._callSubscriber();
+            break;
+         case SEND_MESSAGE:
+            let newMessage = { id: 4, text: this._state.dialogsPage.newMessageText };
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newMessageText = '';
+            this._callSubscriber();
+            break;
+         case UPDATE_NEW_MESSAGE_TEXT:
+            this._state.dialogsPage.newMessageText = action.messageText;
+            this._callSubscriber();
+            break;
+      }
    }
 };
 

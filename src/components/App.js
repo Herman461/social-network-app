@@ -9,6 +9,7 @@ import Dialogs from './Dialogs/Dialogs';
 import Music from './pages/Music';
 import Gallery from './pages/Gallery';
 
+
 const App = (props) => {
    return (
       <div className="wrapper">
@@ -21,8 +22,7 @@ const App = (props) => {
                      render={() => (
                         <Profile
                            state={props.state}
-                           updateNewPostText={props.updateNewPostText}
-                           addPost={props.addPost}
+                           dispatch={props.dispatch}
                         />
                      )}
                      path="/profile"
@@ -31,8 +31,7 @@ const App = (props) => {
                      render={() => (
                         <Dialogs
                            state={props.state}
-                           updateNewMessageText={props.updateNewMessageText}
-                           addMessage={props.addMessage}
+                           dispatch={props.dispatch}
                         />
                      )}
                      path="/dialogs"

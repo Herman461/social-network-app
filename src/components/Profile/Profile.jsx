@@ -4,6 +4,7 @@ import smile from '../../assets/img/icons/smile.svg';
 import camera from '../../assets/img/icons/camera.png';
 import music from '../../assets/img/icons/music.png';
 import micro from '../../assets/img/icons/micro.png';
+import { addPost, updateNewPostText} from '../../redux/actions';
 
 import ProfileInfo from './ProfileInfo';
 import Posts from './Posts';
@@ -11,11 +12,11 @@ import Posts from './Posts';
 const Profile = (props) => {
    function onPostChange(e) {
       let text = e.target.value;
-      props.updateNewPostText(text);
+      props.dispatch(updateNewPostText(text));
    }
-   function addPost(e) {
+   function addNewPost(e) {
       e.preventDefault();
-      props.addPost();
+      props.dispatch(addPost());
    }
    return (
       <div className="profile">
@@ -26,8 +27,8 @@ const Profile = (props) => {
                   placeholder="Создать новый пост..."
                   className="new-post__textarea"
                   value={props.state.profilePage.newPostText}
-                  onChange={onPostChange}></textarea>
-               <button onClick={addPost} className="new-post__button">
+                  onChange={onPostChange} />
+               <button onClick={addNewPost} className="new-post__button">
                   Добавить пост
                </button>
                <ul className="new-post__actions">

@@ -1,8 +1,10 @@
 import React from 'react';
 import DialogItem from './DialogItem';
 import Message from './Message';
+import { sendMessage, updateNewMessageText } from '../../redux/actions';
 
 const Dialogs = (props) => {
+
    let dialogsElements = props.state.dialogsPage.dialogs.map((dialog) => (
       <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />
    ));
@@ -10,15 +12,14 @@ const Dialogs = (props) => {
       <Message text={message.text} key={message.id} id={message.id} />
    ));
 
-   const addMessage = (e) => {
+   const sendNewMessage = (e) => {
       e.preventDefault();
-      props.addMessage();
+      props.dispatch(sendMessage());
    };
    const onMessageChange = (e) => {
       let messageText = e.target.value;
-      props.updateNewMessageText(messageText);
+      props.dispatch(updateNewMessageText(messageText));
    };
-
    return (
       <div className="dialogs">
          <div className="dialogs__body">
@@ -31,7 +32,7 @@ const Dialogs = (props) => {
                onChange={onMessageChange}
                className="form-dialogs__textarea"
             />
-            <button onClick={addMessage} className="form-dialogs__button">
+            <button onClick={sendNewMessage} className="form-dialogs__button">
                Отправить
             </button>
          </form>

@@ -25,7 +25,7 @@ const Profile = (props) => {
                <textarea
                   placeholder="Создать новый пост..."
                   className="new-post__textarea"
-                  value={props.state.newPostText}
+                  value={props.state.profilePage.newPostText}
                   onChange={onPostChange}></textarea>
                <button onClick={addPost} className="new-post__button">
                   Добавить пост
@@ -46,7 +46,7 @@ const Profile = (props) => {
                </ul>
             </div>
          </form>
-         <Posts posts={props.state.posts} />
+         <Posts posts={props.state.profilePage.posts} />
       </div>
    );
 };

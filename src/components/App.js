@@ -20,7 +20,7 @@ const App = (props) => {
                   <Route
                      render={() => (
                         <Profile
-                           state={props.state.profilePage}
+                           state={props.state}
                            updateNewPostText={props.updateNewPostText}
                            addPost={props.addPost}
                         />
@@ -30,7 +30,7 @@ const App = (props) => {
                   <Route
                      render={() => (
                         <Dialogs
-                           state={props.state.dialogsPage}
+                           state={props.state}
                            updateNewMessageText={props.updateNewMessageText}
                            addMessage={props.addMessage}
                         />

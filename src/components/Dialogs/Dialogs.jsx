@@ -4,7 +4,6 @@ import Message from './Message';
 import { sendMessage, updateNewMessageText } from '../../redux/actions';
 
 const Dialogs = (props) => {
-
    let dialogsElements = props.state.dialogsPage.dialogs.map((dialog) => (
       <DialogItem name={dialog.name} key={dialog.id} id={dialog.id} />
    ));

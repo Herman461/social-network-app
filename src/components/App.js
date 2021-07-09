@@ -21,13 +21,13 @@ const App = (props) => {
                <div className="page__content content-page">
                   <Route
                      render={() => (
-                        <ProfileContainer store={props.store} />
+                        <ProfileContainer />
                      )}
                      path="/profile"
                   />
                   <Route
                      render={() => (
-                        <DialogsContainer store={props.store} />
+                        <DialogsContainer />
                      )}
                      path="/dialogs"
                   />

@@ -1,6 +1,7 @@
 import { ADD_POST, UPDATE_NEW_POST_TEXT, SEND_MESSAGE, UPDATE_NEW_MESSAGE_TEXT } from './actions';
 import { profileReducer } from './profileReducer';
 import { dialogsReducer } from './dialogsReducer';
+
 let store = {
    _state: {
       profilePage: {

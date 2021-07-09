@@ -8,7 +8,8 @@ import Sidebar from './Sidebar';
 import Dialogs from './Dialogs/Dialogs';
 import Music from './pages/Music';
 import Gallery from './pages/Gallery';
-
+import DialogsContainer from './Dialogs/DialogsContainer';
+import ProfileContainer from './Profile/ProfileContainer';
 
 const App = (props) => {
    return (
@@ -20,19 +21,13 @@ const App = (props) => {
                <div className="page__content content-page">
                   <Route
                      render={() => (
-                        <Profile
-                           state={props.state}
-                           dispatch={props.dispatch}
-                        />
+                        <ProfileContainer store={props.store} />
                      )}
                      path="/profile"
                   />
                   <Route
                      render={() => (
-                        <Dialogs
-                           state={props.state}
-                           dispatch={props.dispatch}
-                        />
+                        <DialogsContainer store={props.store} />
                      )}
                      path="/dialogs"
                   />

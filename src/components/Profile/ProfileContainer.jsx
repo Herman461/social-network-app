@@ -2,7 +2,6 @@ import React from 'react';
 
 import { addPost, updateNewPostText } from '../../redux/actions';
 import Profile from './Profile';
-import StoreContext from '../../StoreContext';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {

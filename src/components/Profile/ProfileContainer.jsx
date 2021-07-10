@@ -3,34 +3,22 @@ import React from 'react';
 import { addPost, updateNewPostText } from '../../redux/actions';
 import Profile from './Profile';
 import StoreContext from '../../StoreContext';
+import { connect } from 'react-redux';
 
-const ProfileContainer = (props) => {
+const mapStateToProps = (state) => {
+   return {
+      posts: state.profilePage.posts,
+      newPostText: state.profilePage.newPostText
+   }
+}
 
-   return (
-      <StoreContext.Consumer>
-      {
-         store => {
-            let state = store.getState().profilePage;
+const mapDispatchToProps = (dispatch) => {
+   return {
+      addPost: () => dispatch(addPost()),
+      updatePost: (text) => dispatch(updateNewPostText(text))
+   }
+}
 
-            function updatePost(text) {
-               store.dispatch(updateNewPostText(text));
-            }
-
-            function onAddPost() {
-               store.dispatch(addPost());
-            }
-            return (
-               <Profile 
-                  addPost={onAddPost}
-                  updatePost={updatePost}
-                  posts={state.posts}
-                  newPostText={state.newPostText}
-               />
-            );
-         }
-      }
-      </StoreContext.Consumer>
-   );
-};
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
 
 export default ProfileContainer;

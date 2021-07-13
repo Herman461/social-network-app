@@ -1,4 +1,4 @@
-import { SET_USERS, TOGGLE_SUBSCRIBE } from './actions';
+import { SET_USERS, TOGGLE_FOLLOW } from './actions';
 
 let initialState = {
 	users: []
@@ -6,10 +6,10 @@ let initialState = {
 
 export const usersReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case TOGGLE_SUBSCRIBE:
+		case TOGGLE_FOLLOW:
 			return {
 				...state,
-				users: state.users.map(user => user.id === action.userId ? {...user, subscribed: !user.subscribed} : user)
+				users: state.users.map(user => user.id === action.userId ? {...user, followed: !user.followed} : user)
 			}
 		case SET_USERS:
 			return {

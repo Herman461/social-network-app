@@ -499,10 +499,6 @@ a {
    font-weight: 700;
 }
 
-.info-users__top {
-   display: flex;
-   justify-content: space-between;
-}
 .item-users__button {
    display: inline-flex;
    justify-content: center;

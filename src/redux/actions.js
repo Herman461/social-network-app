@@ -3,7 +3,7 @@ export const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
 export const SEND_MESSAGE = "SEND_MESSAGE";
 export const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
 export const SET_USERS = 'SET_USERS';
-export const TOGGLE_SUBSCRIBE = 'TOGGLE_SUBSCRIBE';
+export const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
 
 export const addPost = () => ({
 	type: ADD_POST,
@@ -23,8 +23,8 @@ export const updateNewMessageText = (messageText) => ({
 	messageText
 });
 
-export const toggleSubscribe = (userId) => ({
-	type: TOGGLE_SUBSCRIBE,
+export const toggleFollow = (userId) => ({
+	type: TOGGLE_FOLLOW,
 	userId
 });
 

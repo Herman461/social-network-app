@@ -10,6 +10,7 @@ const Sidebar = () => {
 				<li><NavLink to="/friends" activeClassName="_active" className="side-page__link">Друзья</NavLink></li>
 				<li><NavLink to="/music" activeClassName="_active" className="side-page__link">Музыка</NavLink></li>
 				<li><NavLink to="/gallery" activeClassName="_active" className="side-page__link">Фотографии</NavLink></li>
+				<li><NavLink to="/users" activeClassName="_active" className="side-page__link">Найти пользователя</NavLink></li>
 			</ul>
 		</aside>
 	);

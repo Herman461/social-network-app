@@ -465,3 +465,51 @@ a {
    border: 1px solid #403d3d;
    background-color: #1b1a1a;
 }
+.users {
+   width: 100%;
+}
+.item-users__body {
+   display: flex;
+   margin: 0px 0px 10px 0px;
+}
+
+.users__item {
+   margin: 0px 0px 15px 0px;
+}
+
+.item-users__content {
+   flex: 1 1 auto;
+   padding: 0px 0px 0px 15px;
+}
+.item-users__ava {
+   flex: 0 0 78px;
+}
+.item-users__ava img {
+   max-width: 100%;
+   border-radius: 50%;
+}
+.users__title {
+   font-size: 18px;
+   font-weight: 700;
+   margin: 0px 0px 40px 0px;
+}
+
+.info-users__name {
+   margin: 0px 0px 14px 0px;
+   font-weight: 700;
+}
+
+.info-users__top {
+   display: flex;
+   justify-content: space-between;
+}
+.item-users__button {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   height: 25px;
+   padding: 0px 9px;
+   color: #fff;
+   background-color: #1b1a1a;
+   border: 1px solid #403d3d;
+}

@@ -2,15 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Users from './Users';
-import { setUsers, toggleFollow } from '../../redux/actions';
+import { setUsers, toggleFollow, filterUsers, updateUsersSearch } from '../../redux/actions';
 
 
 const mapStateToProps = (state) => ({
-	users: state.usersPage.users
+	filteredUsers: state.usersPage.filteredUsers,
+	searchText: state.usersPage.text
 })
 const mapDispatchToProps = (dispatch) => ({
 	setUsers: (users) => dispatch(setUsers(users)),
 	toggleFollow: (userId) => dispatch(toggleFollow(userId)),
+	filterUsers: () => dispatch(filterUsers()),
+	updateUsersSearch: (searchText) => dispatch(updateUsersSearch(searchText)),
 })
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
 

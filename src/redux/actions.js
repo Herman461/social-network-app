@@ -4,6 +4,9 @@ export const SEND_MESSAGE = "SEND_MESSAGE";
 export const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
 export const SET_USERS = 'SET_USERS';
 export const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
+export const FILTER_USERS = 'FILTER_USERS';
+export const UPDATE_USERS_SEARCH = 'UPDATE_USERS_SEARCH';
+
 
 export const addPost = () => ({
 	type: ADD_POST,
@@ -32,6 +35,15 @@ export const toggleFollow = (userId) => ({
 export const setUsers = (users) => ({
 	type: SET_USERS,
 	users
+});
+
+export const filterUsers = () => ({
+	type: FILTER_USERS,
+});
+
+export const updateUsersSearch = (searchText) => ({
+	type: UPDATE_USERS_SEARCH,
+	searchText
 });
 
 

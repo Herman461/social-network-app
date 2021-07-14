@@ -11,11 +11,17 @@ class UsersPaging extends React.Component {
 
 	handlePageChangeLeft = (e) => {
 		e.preventDefault();
-		this.props.setSelectedPage(this.props.selectedPage - 1)
+		if (this.props.selectedPage > 1) {
+			this.props.setSelectedPage(this.props.selectedPage - 1)
+		} else {
+			return;
+		}
+		
 	}
 
 	handlePageChangeRight = (e) => {
 		e.preventDefault();
+		// if (this.props.selectedPage < 1) //! Доделать стрелку-переключатель на следующий элемент, сделать так, чтобы не выходило за пределы максимального значения
 		this.props.setSelectedPage(this.props.selectedPage + 1)
 	}
 

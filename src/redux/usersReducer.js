@@ -16,7 +16,7 @@ export const usersReducer = (state = initialState, action) => {
 		case TOGGLE_FOLLOW:
 			return {
 				...state,
-				users: state.users.map(user => 
+				filteredUsers: state.filteredUsers.map(user => 
 					user.id === action.userId ? 
 					{...user, followed: !user.followed} : user
 				)
@@ -30,7 +30,7 @@ export const usersReducer = (state = initialState, action) => {
 		case FILTER_USERS:
 			return {
 				...state,
-				users: state.users.filter(user => user.name.includes(state.text))
+				filteredUsers: state.users.filter(user => user.name.includes(state.text))
 			}
 		case UPDATE_USERS_SEARCH:
 			return {

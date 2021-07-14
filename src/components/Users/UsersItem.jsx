@@ -1,7 +1,7 @@
 import React from 'react';
 import ava from '../../assets/img/ava.jpg';
 
-const UserItem = (props) => {
+const UsersItem = (props) => {
 	return (
 		<li className="users__item item-users">
 			<div className="item-users__body">
@@ -25,4 +25,4 @@ const UserItem = (props) => {
 	);
 }
 
-export default UserItem;
+export default UsersItem;

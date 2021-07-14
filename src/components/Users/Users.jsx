@@ -1,5 +1,5 @@
 import React from 'react';
-import UserItem from './UserItem';
+import UsersItem from './UsersItem';
 import * as axios from 'axios';
 import UsersSearch from './UsersSearch';
 
@@ -13,7 +13,7 @@ class Users extends React.Component {
 
 	getUsersElements() {
 		return this.props.filteredUsers.map(user => (
-			<UserItem
+			<UsersItem
 				key={user.id}
 				setUsers={this.props.setUsers}
 				toggleFollow={this.props.toggleFollow}

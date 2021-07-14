@@ -2,13 +2,17 @@ import {
 	SET_USERS,
 	TOGGLE_FOLLOW,
 	UPDATE_USERS_SEARCH,
-	FILTER_USERS } from './actions';
+	FILTER_USERS,
+	SET_TOTAL_USERS_COUNT,
+	SET_SELECTED_PAGE } from './actions';
 
 let initialState = {
 	users: [],
 	filteredUsers: [],
 	text: "",
-
+	pageSize: 5,
+	totalUsersCount: 0,
+	selectedPage: 1
 }
 
 export const usersReducer = (state = initialState, action) => {
@@ -24,8 +28,8 @@ export const usersReducer = (state = initialState, action) => {
 		case SET_USERS:
 			return {
 				...state,
-				users: [...state.users, ...action.users],
-				filteredUsers: [...state.filteredUsers, ...action.users]
+				users: [...action.users],
+				filteredUsers: [...action.users]
 			}
 		case FILTER_USERS:
 			return {
@@ -37,6 +41,16 @@ export const usersReducer = (state = initialState, action) => {
 				...state,
 				text: action.searchText
 			};
+		case SET_TOTAL_USERS_COUNT:
+			return {
+				...state,
+				totalUsersCount: action.totalUsersCount
+			}
+		case SET_SELECTED_PAGE:
+			return {
+				...state,
+				selectedPage: action.selectedPage
+			}
 		default:
 			return state;
 	}

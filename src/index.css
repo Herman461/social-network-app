@@ -527,3 +527,75 @@ a {
 .users__seacrh {
    margin: 0px 0px 25px 0px;
 }
+
+.paging__list {
+   display: flex;
+   margin: 0px 15px;
+}
+
+.paging__list li {
+   margin: 0px 6px;
+}
+.paging__item {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   color: #fff;
+   font-weight: 700;
+}
+
+.paging__item._active {
+  background-color: #fd8424; 
+}
+
+.paging__arrow {
+   width: 25px;
+   height: 25px;
+   display: block;
+   position: relative;
+}
+
+.paging__arrow:before,
+.paging__arrow:after {
+   content: '';
+   width: 2px;
+   height: 50%;
+   background-color: #fff;
+   position: absolute;
+}
+
+.paging__arrow_previous:before {
+   left: 0;
+   top: 0;
+   transform: rotate(45deg);
+}
+
+.paging__arrow_previous:after {
+   left: 0;
+   bottom: 4px;
+   transform: rotate(-45deg);
+}
+
+.paging__arrow_next:before {
+   left: 0;
+   top: 0;
+   transform: rotate(-45deg);
+}
+
+.paging__arrow_next:after {
+   left: 0;
+   bottom: 4px;
+   transform: rotate(45deg);
+}
+
+.paging {
+   display: flex;
+   align-items: center;
+}
+
+.users__pages {
+   margin: 0px 0px 20px 0px;
+}

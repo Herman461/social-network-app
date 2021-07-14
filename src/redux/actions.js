@@ -6,7 +6,8 @@ export const SET_USERS = 'SET_USERS';
 export const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
 export const FILTER_USERS = 'FILTER_USERS';
 export const UPDATE_USERS_SEARCH = 'UPDATE_USERS_SEARCH';
-
+export const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+export const SET_SELECTED_PAGE = 'SET_SELECTED_PAGE';
 
 export const addPost = () => ({
 	type: ADD_POST,
@@ -45,6 +46,19 @@ export const updateUsersSearch = (searchText) => ({
 	type: UPDATE_USERS_SEARCH,
 	searchText
 });
+
+export const setTotalUsersCount = (totalUsersCount) => ({
+	type: SET_TOTAL_USERS_COUNT,
+	totalUsersCount
+});
+
+export const setSelectedPage = (selectedPage) => ({
+	type: SET_SELECTED_PAGE,
+	selectedPage
+});
+
+
+
 
 
 

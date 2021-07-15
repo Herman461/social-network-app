@@ -11,13 +11,6 @@ const mapStateToProps = (state) => {
    }
 }
 
-const mapDispatchToProps = (dispatch) => {
-   return {
-      updateMessage: (text) => dispatch(updateNewMessageText(text)),
-      sendMessage: () => dispatch(sendMessage())
-   }
-}
-
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+const DialogsContainer = connect(mapStateToProps, { updateNewMessageText, sendMessage })(Dialogs);
 
 export default DialogsContainer;

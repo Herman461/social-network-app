@@ -36,11 +36,5 @@ const mapStateToProps = (state) => ({
 	pageNeighbours: state.usersPage.pageNeighbours
 })
 
-const mapDispatchToProps = (dispatch) => ({
-	setSelectedPage: (page) => dispatch(setSelectedPage(page)),
-	setUsers: (users) => dispatch(setUsers(users)),
-	toggleIsFetching: () => dispatch(toggleIsFetching())
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersPagingContainer);
+export default connect(mapStateToProps, 
+{setSelectedPage, setUsers, toggleIsFetching})(UsersPagingContainer);

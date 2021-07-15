@@ -12,7 +12,7 @@ import Posts from './Posts';
 const Profile = (props) => {
    function onPostChange(e) {
       let text = e.target.value;
-      props.updatePost(text);
+      props.updateNewPostText(text);
    }
    function addNewPost(e) {
       e.preventDefault();

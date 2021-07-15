@@ -46,15 +46,8 @@ const mapStateToProps = (state) => ({
 	isFetching: state.usersPage.isFetching
 });
 
-const mapDispatchToProps = (dispatch) => ({
-	setUsers: (users) => dispatch(setUsers(users)),
-	toggleFollow: (userId) => dispatch(toggleFollow(userId)),
-	filterUsers: () => dispatch(filterUsers()),
-	updateUsersSearch: (searchText) => dispatch(updateUsersSearch(searchText)),
-	setTotalUsersCount: (totalCount) => dispatch(setTotalUsersCount(totalCount)),
-	toggleIsFetching: () => dispatch(toggleIsFetching())
-});
-
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersComponent);
+const UsersContainer = connect(mapStateToProps,
+{setUsers, toggleFollow, filterUsers, updateUsersSearch, 
+setTotalUsersCount, toggleIsFetching})(UsersComponent);
 
 export default UsersContainer;

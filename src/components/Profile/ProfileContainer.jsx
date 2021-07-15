@@ -11,13 +11,6 @@ const mapStateToProps = (state) => {
    }
 }
 
-const mapDispatchToProps = (dispatch) => {
-   return {
-      addPost: () => dispatch(addPost()),
-      updatePost: (text) => dispatch(updateNewPostText(text))
-   }
-}
-
-const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile)
+const ProfileContainer = connect(mapStateToProps, { addPost, updateNewPostText })(Profile)
 
 export default ProfileContainer;

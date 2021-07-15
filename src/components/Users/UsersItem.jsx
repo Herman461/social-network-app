@@ -1,13 +1,14 @@
 import React from 'react';
 import ava from '../../assets/img/ava.jpg';
+import { NavLink } from 'react-router-dom';
 
 const UsersItem = (props) => {
 	return (
 		<li className="users__item item-users">
 			<div className="item-users__body">
-				<div className="item-users__ava">
+				<NavLink to={"/profile/" + props.user.id} className="item-users__ava">
 					<img src={props.user.photos.small ? props.user.photos.small : ava} alt="" />
-				</div>
+				</NavLink>
 				<div className="item-users__content">
 					<div className="item-users__info info-users">
 						<div className="info-users__name">{props.user.name}</div>

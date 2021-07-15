@@ -1,4 +1,4 @@
-import { ADD_POST, UPDATE_NEW_POST_TEXT } from './actions';
+import { ADD_POST, UPDATE_NEW_POST_TEXT, SET_USER_PROFILE } from './actions';
 
 const initialState = {
 	posts: [
@@ -8,6 +8,7 @@ const initialState = {
 	{ likesCount: 120, message: 'Изучению программирование каждый день.', id: 4 },
 	],
 	newPostText: '',
+	profile: null
 }
 
 export const profileReducer = (state = initialState, action) => {
@@ -24,6 +25,11 @@ export const profileReducer = (state = initialState, action) => {
 			return {
 				...state,
 				newPostText: action.postText
+			}
+		case SET_USER_PROFILE:
+			return {
+				...state,
+				profile: action.profile
 			}
 		default:
 			return state;

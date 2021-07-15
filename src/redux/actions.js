@@ -9,7 +9,7 @@ export const UPDATE_USERS_SEARCH = 'UPDATE_USERS_SEARCH';
 export const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 export const SET_SELECTED_PAGE = 'SET_SELECTED_PAGE';
 export const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
-
+export const SET_USER_PROFILE = 'SET_USER_PROFILE';
 export const addPost = () => ({
 	type: ADD_POST,
 });
@@ -61,6 +61,11 @@ export const setSelectedPage = (selectedPage) => ({
 export const toggleIsFetching = () => ({
 	type: TOGGLE_IS_FETCHING
 });
+
+export const setUserProfile = (profile) => ({
+	type: SET_USER_PROFILE,
+	profile
+})
 
 
 

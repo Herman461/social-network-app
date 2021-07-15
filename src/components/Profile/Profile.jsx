@@ -21,6 +21,7 @@ const Profile = (props) => {
    return (
       <div className="profile">
          <ProfileInfo />
+         <div className="profile__photo">{props.profile && <img src={props.profile.photos.small} alt="" />}</div>
          <form className="user-info__new-post new-post">
             <div className="new-post__body">
                <textarea

@@ -2,10 +2,35 @@ import React from 'react';
 import * as axios from "axios";
 
 const UsersPaging = (props) => {
+	// const range = (from, to, step = 1) => {
+	// 	let i = from;
+	// 	const range = [];
+
+	// 	while (i <= to) {
+	// 		range.push(i);
+	// 		i += step;
+	// 	}
+	// 	return range;
+	// }
+	// const fetchPageNumbers = () => {
+	// 	const totalPages = Math.ceil(props.totalUsersCount / props.pageSize);
+	// 	const totalNumbers = (props.pageNeighbours * 2) + 3;
+	// 	const totalBlock = totalNumbers + 2;
+		
+	// 	if (totalPages > totalBlock) {
+	// 		const startPage = Math.max(2, props.selectedPage - pageNeighbours);
+	// 		const endPage = Math.min(totalPages - 1, props.selectedPage + pageNeighbours);
+	// 		let pages = range(startPage, endPage);
+
+	// 		const hasLeftSpill = startPage > 2;
+	// 		const hasRightSpill = (props.totalUsersCount - endPage) > 1;
+	// 		const spillOffset = totalNumbers - (pages.length + 1);
+	// 	}
+	// }
 	const handlePageChangeLeft = (e) => {
 		e.preventDefault();
-		if (props.props.selectedPage > 1) {
-			props.props.setSelectedPage(props.props.selectedPage - 1)
+		if (props.selectedPage > 1) {
+			props.setSelectedPage(props.selectedPage - 1)
 		} else {
 			return;
 		}
@@ -14,8 +39,8 @@ const UsersPaging = (props) => {
 
 	const handlePageChangeRight = (e) => {
 		e.preventDefault();
-		// if (props.props.selectedPage < 1) //! Доделать стрелку-переключатель на следующий элемент, сделать так, чтобы не выходило за пределы максимального значения
-		props.props.setSelectedPage(props.props.selectedPage + 1)
+		// if (props.selectedPage < 1) //! Доделать стрелку-переключатель на следующий элемент, сделать так, чтобы не выходило за пределы максимального значения
+		props.setSelectedPage(props.selectedPage + 1)
 	}
 
 

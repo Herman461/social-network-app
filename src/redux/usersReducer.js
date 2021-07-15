@@ -4,7 +4,8 @@ import {
 	UPDATE_USERS_SEARCH,
 	FILTER_USERS,
 	SET_TOTAL_USERS_COUNT,
-	SET_SELECTED_PAGE } from './actions';
+	SET_SELECTED_PAGE,
+	TOGGLE_IS_FETCHING } from './actions';
 
 let initialState = {
 	users: [],
@@ -12,7 +13,9 @@ let initialState = {
 	text: "",
 	pageSize: 5,
 	totalUsersCount: 0,
-	selectedPage: 1
+	selectedPage: 1,
+	isFetching: false,
+	pageNeighbours: 2,
 }
 
 export const usersReducer = (state = initialState, action) => {
@@ -50,6 +53,11 @@ export const usersReducer = (state = initialState, action) => {
 			return {
 				...state,
 				selectedPage: action.selectedPage
+			}
+		case TOGGLE_IS_FETCHING:
+			return {
+				...state,
+				isFetching: !state.isFetching
 			}
 		default:
 			return state;

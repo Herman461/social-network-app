@@ -10,12 +10,15 @@ import {
 	filterUsers, 
 	updateUsersSearch,
 	setTotalUsersCount,
-	setSelectedPage } from '../../redux/actions';
+	setSelectedPage,
+	toggleIsFetching } from '../../redux/actions';
 
 class UsersComponent extends React.Component {
 	componentDidMount() {
+		this.props.toggleIsFetching();
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}`)
 		.then(response => {
+			this.props.toggleIsFetching();
 			this.props.setUsers(response.data.items);
 			this.props.setTotalUsersCount(response.data.totalCount)
 		});
@@ -29,7 +32,8 @@ class UsersComponent extends React.Component {
 			filterUsers={this.props.filterUsers}
 			updateUsersSearch={this.props.updateUsersSearch}
 			searchText={this.props.searchText}
-		 />; //! сюда не приходят пропсы
+			isFetching={this.props.isFetching}
+		 />;
 	 } 
 
 };
@@ -39,6 +43,7 @@ const mapStateToProps = (state) => ({
 	searchText: state.usersPage.text,
 	totalUsersCount: state.usersPage.totalUsersCount,
 	filteredUsers: state.usersPage.filteredUsers,
+	isFetching: state.usersPage.isFetching
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -47,6 +52,7 @@ const mapDispatchToProps = (dispatch) => ({
 	filterUsers: () => dispatch(filterUsers()),
 	updateUsersSearch: (searchText) => dispatch(updateUsersSearch(searchText)),
 	setTotalUsersCount: (totalCount) => dispatch(setTotalUsersCount(totalCount)),
+	toggleIsFetching: () => dispatch(toggleIsFetching())
 });
 
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersComponent);

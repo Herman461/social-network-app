@@ -8,6 +8,7 @@ export const FILTER_USERS = 'FILTER_USERS';
 export const UPDATE_USERS_SEARCH = 'UPDATE_USERS_SEARCH';
 export const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 export const SET_SELECTED_PAGE = 'SET_SELECTED_PAGE';
+export const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 export const addPost = () => ({
 	type: ADD_POST,
@@ -56,6 +57,11 @@ export const setSelectedPage = (selectedPage) => ({
 	type: SET_SELECTED_PAGE,
 	selectedPage
 });
+
+export const toggleIsFetching = () => ({
+	type: TOGGLE_IS_FETCHING
+});
+
 
 
 

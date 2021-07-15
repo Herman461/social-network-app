@@ -1,8 +1,9 @@
 import React from 'react';
+
 import UsersSearch from './UsersSearch';
 import UsersPagingContainer  from './UsersPagingContainer';
 import UsersItem from './UsersItem';
-
+import Preloader from '../common/Preloader';
 
 const Users = (props) => {
 	let usersElements = props.filteredUsers.map(user => (
@@ -15,6 +16,7 @@ const Users = (props) => {
 	));
 	
 	return (
+		
 		<div className="users">
 			<div className="users__title">Users</div>
 			<UsersPagingContainer />
@@ -23,9 +25,12 @@ const Users = (props) => {
 				updateUsersSearch={props.updateUsersSearch}
 				searchText={props.searchText}
 			/>
-			<ul className="users__items">
-				{usersElements}
-			</ul>
+			{props.isFetching ? <Preloader />
+			: 	<ul className="users__items">
+					{usersElements}
+				</ul>
+			}
+
 		</div>
 	);
 };

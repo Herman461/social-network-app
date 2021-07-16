@@ -1,12 +1,12 @@
 import React from 'react';
 import ava from '../../assets/img/ava.jpg';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
    return (
       <div className="profile__info info-profile">
          <div className="info-profile__column">
             <div className="info-profile__ava">
-               <img src={ava} />
+               <img src={props.profile && props.profile.photos.small ? props.profile.photos.small : ava} />
             </div>
          </div>
          <div className="info-profile__column">

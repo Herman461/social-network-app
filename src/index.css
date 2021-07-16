@@ -303,9 +303,9 @@ a {
 }
 
 .info-profile__ava img {
-   max-width: 100%;
+   width: 100%;
+   height: 100%;
 }
-
 .info-profile__name {
    font-size: 18px;
    font-weight: 700;

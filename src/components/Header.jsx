@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
 import message from '../assets/img/icons/message.svg';
 import music from '../assets/img/icons/music.svg';
@@ -9,7 +9,7 @@ import smallAva from '../assets/img/small_ava.jpg';
 import arrowDown from '../assets/img/icons/arrow_down.svg';
 import search from '../assets/img/icons/search-header.svg';
 
-const Header = () => {
+const Header = (props) => {
    return (
       <header className="header">
          <div className="header__container _container">
@@ -48,6 +48,16 @@ const Header = () => {
                   </li>
                </ul>
             </nav>
+            <div className="header__data data-header">
+                  {props.isAuth ? 
+                     <>
+                        <div className="data-header__login">login: {props.data.login}</div>
+                        <div className="data-header__id">id: {props.data.id}</div>
+                        <div className="data-header__email">email: {props.data.email}</div>
+                     </>
+                     : <NavLink to="/login">Войти</NavLink>
+                  }
+            </div>
             <a href="" className="header__user user-header">
                <div className="user-header__body">
                   <div className="user-header__ava">

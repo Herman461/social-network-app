@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './Header';
+import HeaderContainer from './HeaderContainer';
 import Profile from './Profile/Profile';
 import { Route } from 'react-router-dom';
 import Friends from './pages/Friends';
@@ -15,7 +15,7 @@ import UsersContainer from './Users/UsersContainer';
 const App = (props) => {
    return (
       <div className="wrapper">
-         <Header />
+         <HeaderContainer />
          <main className="page">
             <div className="page__container _container">
                <Sidebar />

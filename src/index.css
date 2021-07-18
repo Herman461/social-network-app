@@ -243,6 +243,7 @@ a {
 .user-header__ava {
    width: 51px;
    padding: 0px 15px 0px 0px;
+   margin: 0px 0px 0px 15px;
 }
 
 .user-header__ava img {

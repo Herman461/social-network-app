@@ -10,6 +10,8 @@ export const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 export const SET_SELECTED_PAGE = 'SET_SELECTED_PAGE';
 export const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 export const SET_USER_PROFILE = 'SET_USER_PROFILE';
+export const SET_USER_DATA = 'SET_USER_DATA';
+
 export const addPost = () => ({
 	type: ADD_POST,
 });
@@ -67,7 +69,10 @@ export const setUserProfile = (profile) => ({
 	profile
 })
 
-
+export const setAuthUserData = (data) => ({
+	type: SET_USER_DATA,
+	data
+})
 
 
 

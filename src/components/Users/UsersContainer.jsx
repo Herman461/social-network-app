@@ -13,15 +13,16 @@ import {
 	setSelectedPage,
 	toggleIsFetching } from '../../redux/actions';
 
+import { getUsers } from '../../api/api';
+
 class UsersComponent extends React.Component {
 	componentDidMount() {
 		this.props.toggleIsFetching();
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}`, 
-		{ withCredentials: true })
-		.then(response => {
+		
+		getUsers(this.props.pageSize).then(data => {
 			this.props.toggleIsFetching();
-			this.props.setUsers(response.data.items);
-			this.props.setTotalUsersCount(response.data.totalCount)
+			this.props.setUsers(data.items);
+			this.props.setTotalUsersCount(data.totalCount)
 		});
 	}
 

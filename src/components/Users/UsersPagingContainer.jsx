@@ -3,15 +3,15 @@ import * as axios from "axios";
 import UsersPaging from './UsersPaging';
 import { connect } from 'react-redux';
 import { setSelectedPage, setUsers, toggleIsFetching } from '../../redux/actions';
+import { getPages } from '../../api/api';
 
 class UsersPagingContainer extends React.Component {
 	onPageClick = (e, page) => {
 		e.preventDefault();
 		this.props.toggleIsFetching();
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.pageSize}`)
-		.then(response => {
+		getPages(this.props.pageSize, page).then(data => {
 			this.props.toggleIsFetching();
-			this.props.setUsers(response.data.items);
+			this.props.setUsers(data.items);
 		})
 		this.props.setSelectedPage(page);
 	}

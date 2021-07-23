@@ -6,13 +6,13 @@ import { withRouter } from 'react-router-dom';
 
 import { addPost, updateNewPostText, setUserProfile } from '../../redux/actions';
 import Profile from './Profile';
+import { getUserProfile } from '../../api/api';
 
 class ProfileContainer extends React.Component {
 
    componentDidMount() {
       let userId = this.props.match.params.userId || 2;
-      axios.get('https://social-network.samuraijs.com/api/1.0/profile/' + userId, { withCredentials: true })
-      .then(response => this.props.setUserProfile(response.data))
+      getUserProfile(userId).then(data => this.props.setUserProfile(data))
    }
    render() {
       return <Profile {...this.props} />

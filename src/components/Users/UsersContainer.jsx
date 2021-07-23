@@ -16,7 +16,8 @@ import {
 class UsersComponent extends React.Component {
 	componentDidMount() {
 		this.props.toggleIsFetching();
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}`)
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}`, 
+		{ withCredentials: true })
 		.then(response => {
 			this.props.toggleIsFetching();
 			this.props.setUsers(response.data.items);
@@ -25,15 +26,7 @@ class UsersComponent extends React.Component {
 	}
 
 	render() {
-		return <Users
-			filteredUsers={this.props.filteredUsers}
-			setUsers={this.props.setUsers}
-			toggleFollow={this.props.toggleFollow}
-			filterUsers={this.props.filterUsers}
-			updateUsersSearch={this.props.updateUsersSearch}
-			searchText={this.props.searchText}
-			isFetching={this.props.isFetching}
-		 />;
+		return <Users {...this.props} />;
 	 } 
 
 };
@@ -43,7 +36,7 @@ const mapStateToProps = (state) => ({
 	searchText: state.usersPage.text,
 	totalUsersCount: state.usersPage.totalUsersCount,
 	filteredUsers: state.usersPage.filteredUsers,
-	isFetching: state.usersPage.isFetching
+	isFetching: state.usersPage.isFetching,
 });
 
 const UsersContainer = connect(mapStateToProps,

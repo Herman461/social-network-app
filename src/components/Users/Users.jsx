@@ -9,7 +9,6 @@ const Users = (props) => {
 	let usersElements = props.filteredUsers.map(user => (
 		<UsersItem
 			key={user.id}
-			setUsers={props.setUsers}
 			toggleFollow={props.toggleFollow}
 			user={user}
 		/>

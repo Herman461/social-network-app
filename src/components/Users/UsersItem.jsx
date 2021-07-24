@@ -6,7 +6,7 @@ import * as axios from 'axios';
 const UsersItem = (props) => {
 	const toggleFollow = () => {
 		if (props.user.followed === false) {
-			axios.post('https://social-network.samuraijs.com/api/1.0/follow/' + props.user.followed, {}, {
+			axios.post('https://social-network.samuraijs.com/api/1.0/follow/' + props.user.id, {}, {
 				withCredentials: true,
 				headers: {
 					"API-KEY": "b7f92f8a-1d58-48c9-adc5-ac6d753dd66f"
@@ -14,11 +14,11 @@ const UsersItem = (props) => {
 			})
 			.then(response => {
 			 	if (response.data.resultCode === 0) {
-			 		props.toggleFollow(props.user.followed);
+			 		props.toggleFollow(props.user.id);
 			 	}
 			})
 		} else {
-			axios.delete('https://social-network.samuraijs.com/api/1.0/follow/' + props.user.followed, {
+			axios.delete('https://social-network.samuraijs.com/api/1.0/follow/' + props.user.id, {
 				withCredentials: true,
 				headers: {
 					"API-KEY": "b7f92f8a-1d58-48c9-adc5-ac6d753dd66f"
@@ -26,7 +26,7 @@ const UsersItem = (props) => {
 			})
 			.then(response => {
 			 	if (response.data.resultCode === 0) {
-			 		props.toggleFollow(props.user.followed);
+			 		props.toggleFollow(props.user.id);
 			 	}
 			})
 		}
@@ -46,7 +46,7 @@ const UsersItem = (props) => {
 			</div>
 			<button
 				className="item-users__button" 
-				onClick={() => toggleFollow()}
+				onClick={() => props.toggleFollow(props.user.id)}
 			>
 				{props.user.followed ? "В друзьях" : "Добавить в друзья"}
 			</button>

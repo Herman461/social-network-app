@@ -8,7 +8,9 @@ import Sidebar from './Sidebar/Sidebar.js';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Header from "./Header/Header.js";
-
+import {useEffect} from "react";
+import { Provider } from 'react-redux'
+import store from "../store/store";
 
 /*
 const Item = styled(Paper)(({ theme }) => ({
@@ -43,26 +45,38 @@ const theme = createTheme({
 })
 
 const Layout = (props) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Header />
-            <Box component="main" sx={{ paddingTop: '60px' }}>
-                <Container maxWidth="lg">
-                    <Box sx={{ flexGrow: 1}}>
-                        <Grid container spacing={2}>
-                            <Grid item xs={2}>
-                                <Sidebar />
-                            </Grid>
-                            <Grid item xs={10}>
-                                {props.children}
-                            </Grid>
-                        </Grid>
-                    </Box>
-                </Container>
-            </Box>
 
-        </ThemeProvider>
+    useEffect(() => {
+
+    }, [])
+
+    return (
+        <Provider store={store}>
+            <ThemeProvider theme={theme}>
+                <Header />
+                <Box component="main" sx={{ paddingTop: '60px' }}>
+                    <Container maxWidth="lg">
+                        <Box sx={{ flexGrow: 1}}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={2}>
+                                    <Sidebar />
+                                </Grid>
+                                <Grid item xs={10}>
+                                    {props.children}
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </Container>
+                </Box>
+
+            </ThemeProvider>
+        </Provider>
+
     );
+}
+
+function mapDispatchToProps() {
+
 }
 
 export default Layout;

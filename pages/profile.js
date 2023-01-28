@@ -1,5 +1,6 @@
+import {getServerSideProps} from "../server/auth";
 
-const Profile = () => {
+const Profile = (props) => {
 
     return (
         <>
@@ -7,5 +8,6 @@ const Profile = () => {
         </>
     );
 }
-
+export {getServerSideProps}
 export default Profile
+

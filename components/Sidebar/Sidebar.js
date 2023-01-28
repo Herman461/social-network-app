@@ -11,13 +11,13 @@ const links = [
         id: 1,
         icon: <AccountCircleOutlinedIcon color="secondary" />,
         text: "Моя страница",
-        href: "/"
+        href: "/profile"
     },
     {
         id: 2,
         icon: <ChatBubbleOutlineOutlinedIcon color="secondary" />,
         text: "Мессенджер",
-        href: "/im"
+        href: "/messages"
     },
     {
         id: 3,
